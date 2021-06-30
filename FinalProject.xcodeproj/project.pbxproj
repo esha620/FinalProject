@@ -14,6 +14,7 @@
 		5A4FF3CD268B980E00596D3B /* FinalProject.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5A4FF3CB268B980E00596D3B /* FinalProject.xcdatamodeld */; };
 		5A4FF3CF268B981100596D3B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5A4FF3CE268B981100596D3B /* Assets.xcassets */; };
 		5A4FF3D2268B981100596D3B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5A4FF3D0268B981100596D3B /* LaunchScreen.storyboard */; };
+		5A8C59C8268CC8760096D94C /* SeeProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A8C59C7268CC8760096D94C /* SeeProfileViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		5A4FF3CE268B981100596D3B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5A4FF3D1268B981100596D3B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5A4FF3D3268B981100596D3B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5A8C59C7268CC8760096D94C /* SeeProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeeProfileViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +68,7 @@
 				5A4FF3D0268B981100596D3B /* LaunchScreen.storyboard */,
 				5A4FF3D3268B981100596D3B /* Info.plist */,
 				5A4FF3CB268B980E00596D3B /* FinalProject.xcdatamodeld */,
+				5A8C59C7268CC8760096D94C /* SeeProfileViewController.swift */,
 			);
 			path = FinalProject;
 			sourceTree = "<group>";
@@ -142,6 +145,7 @@
 			files = (
 				5A4FF3C7268B980E00596D3B /* ViewController.swift in Sources */,
 				5A4FF3C3268B980E00596D3B /* AppDelegate.swift in Sources */,
+				5A8C59C8268CC8760096D94C /* SeeProfileViewController.swift in Sources */,
 				5A4FF3CD268B980E00596D3B /* FinalProject.xcdatamodeld in Sources */,
 				5A4FF3C5268B980E00596D3B /* SceneDelegate.swift in Sources */,
 			);
