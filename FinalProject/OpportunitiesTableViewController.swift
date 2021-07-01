@@ -1,10 +1,12 @@
 import UIKit
 
 class OpportunitiesTableViewController: UITableViewController {
-    var opportunities : [Opportunity] = []
+    var opportunities : [OpportunityCD] = []
     override func viewDidLoad() {
         super.viewDidLoad()
-        opportunities = createOpportunities()
+        getOpportunities()
+        
+       // opportunities = createOpportunities()
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -12,19 +14,30 @@ class OpportunitiesTableViewController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
-    func createOpportunities() -> [Opportunity]{
-        let scholarship1 = Opportunity()
-        scholarship1.name = "Ocean Awareness Contest"
-        scholarship1.type = "Scholarship"
-        let scholarship2 = Opportunity()
-        scholarship2.name = "Tallo"
-        scholarship2.type = "Scholarship"
-        let camp1 = Opportunity()
-        camp1.name = "Kode with Klossy"
-        camp1.type = "Camp"
-        
-        return [scholarship1, scholarship2, camp1]
+    override func viewWillAppear(_ animated: Bool) {
+        getOpportunities()
     }
+    func getOpportunities(){
+        if let context = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext{
+            if let coreDataOpportunities = try? context.fetch(OpportunityCD.fetchRequest()) as? [OpportunityCD]{
+                opportunities = coreDataOpportunities
+                tableView.reloadData()
+            }
+        }
+    }
+//    func createOpportunities() -> [Opportunity]{
+//        let scholarship1 = Opportunity()
+//        scholarship1.name = "Ocean Awareness Contest"
+//        scholarship1.type = "Scholarship"
+//        let scholarship2 = Opportunity()
+//        scholarship2.name = "Tallo"
+//        scholarship2.type = "Scholarship"
+//        let camp1 = Opportunity()
+//        camp1.name = "Kode with Klossy"
+//        camp1.type = "Camp"
+//
+//        return [scholarship1, scholarship2, camp1]
+//    }
 
     // MARK: - Table view data source
 
@@ -43,18 +56,21 @@ class OpportunitiesTableViewController: UITableViewController {
 
         // Configure the cell...
         let opportunity = opportunities[indexPath.row]
-        
-        if opportunity.type == "Scholarship" && opportunity.important{
-            cell.textLabel?.text = "‼️💲" + opportunity.name
-        }else if opportunity.type == "Camp" && opportunity.important{
-            cell.textLabel?.text = "‼️✏️" + opportunity.name
-        }else if opportunity.type == "Internship" && opportunity.important{
-            cell.textLabel?.text = "‼️💻" + opportunity.name
-        }else if opportunity.important{
-            cell.textLabel?.text = "‼️" + opportunity.name
-        }else{
-            cell.textLabel?.text = opportunity.name
+        if let name = opportunity.name, let opp = opportunity.type{
+            if opp == "Scholarship" && opportunity.important{
+                cell.textLabel?.text = "‼️💲" + name
+            }else if opp == "Camp" && opportunity.important{
+                cell.textLabel?.text = "‼️✏️" + name
+            }else if opp == "Internship" && opportunity.important{
+                cell.textLabel?.text = "‼️💻" + name
+            }else if opportunity.important{
+                cell.textLabel?.text = "‼️" + name
+            }else{
+                cell.textLabel?.text = name
+            }
+            
         }
+      
 
         return cell
     }
@@ -109,7 +125,7 @@ class OpportunitiesTableViewController: UITableViewController {
             addVC.previousVC = self
         }
         if let completeVC = segue.destination as? DeleteOppViewController{
-            if let opportunity = sender as? Opportunity{
+            if let opportunity = sender as? OpportunityCD{
                 completeVC.selectedOpportunity = opportunity
                 completeVC.previousVC = self
             }
