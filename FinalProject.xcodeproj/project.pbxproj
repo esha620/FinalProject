@@ -14,6 +14,8 @@
 		5A4FF3CD268B980E00596D3B /* FinalProject.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5A4FF3CB268B980E00596D3B /* FinalProject.xcdatamodeld */; };
 		5A4FF3CF268B981100596D3B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5A4FF3CE268B981100596D3B /* Assets.xcassets */; };
 		5A4FF3D2268B981100596D3B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5A4FF3D0268B981100596D3B /* LaunchScreen.storyboard */; };
+		5AD1841B268D88BC00FDC874 /* AddToOpportunitiesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AD1841A268D88BC00FDC874 /* AddToOpportunitiesViewController.swift */; };
+		5AD1841D268D88F700FDC874 /* DeleteOppViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AD1841C268D88F700FDC874 /* DeleteOppViewController.swift */; };
 		5AF890B2268CE79200EF5F6D /* OpportunitiesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AF890B1268CE79200EF5F6D /* OpportunitiesTableViewController.swift */; };
 		5AF890B4268CE80800EF5F6D /* Opportunity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AF890B3268CE80800EF5F6D /* Opportunity.swift */; };
 /* End PBXBuildFile section */
@@ -28,6 +30,8 @@
 		5A4FF3CE268B981100596D3B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5A4FF3D1268B981100596D3B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5A4FF3D3268B981100596D3B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5AD1841A268D88BC00FDC874 /* AddToOpportunitiesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddToOpportunitiesViewController.swift; path = "../../../Desktop/KWK 2021/FinalProject/FinalProject/AddToOpportunitiesViewController.swift"; sourceTree = "<group>"; };
+		5AD1841C268D88F700FDC874 /* DeleteOppViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DeleteOppViewController.swift; path = "../../../Desktop/KWK 2021/FinalProject/FinalProject/DeleteOppViewController.swift"; sourceTree = "<group>"; };
 		5AF890B1268CE79200EF5F6D /* OpportunitiesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpportunitiesTableViewController.swift; sourceTree = "<group>"; };
 		5AF890B3268CE80800EF5F6D /* Opportunity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Opportunity.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -66,6 +70,8 @@
 				5A4FF3C4268B980E00596D3B /* SceneDelegate.swift */,
 				5A4FF3C6268B980E00596D3B /* ViewController.swift */,
 				5A4FF3C8268B980E00596D3B /* Main.storyboard */,
+				5AD1841A268D88BC00FDC874 /* AddToOpportunitiesViewController.swift */,
+				5AD1841C268D88F700FDC874 /* DeleteOppViewController.swift */,
 				5A4FF3CE268B981100596D3B /* Assets.xcassets */,
 				5A4FF3D0268B981100596D3B /* LaunchScreen.storyboard */,
 				5A4FF3D3268B981100596D3B /* Info.plist */,
@@ -147,8 +153,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				5A4FF3C7268B980E00596D3B /* ViewController.swift in Sources */,
+				5AD1841D268D88F700FDC874 /* DeleteOppViewController.swift in Sources */,
 				5A4FF3C3268B980E00596D3B /* AppDelegate.swift in Sources */,
 				5A4FF3CD268B980E00596D3B /* FinalProject.xcdatamodeld in Sources */,
+				5AD1841B268D88BC00FDC874 /* AddToOpportunitiesViewController.swift in Sources */,
 				5AF890B4268CE80800EF5F6D /* Opportunity.swift in Sources */,
 				5A4FF3C5268B980E00596D3B /* SceneDelegate.swift in Sources */,
 				5AF890B2268CE79200EF5F6D /* OpportunitiesTableViewController.swift in Sources */,

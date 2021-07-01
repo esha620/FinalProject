@@ -1,16 +1,10 @@
-//
-//  OpportunitiesTableViewController.swift
-//  FinalProject
-//
-//  Created by Esha Jain on 6/30/21.
-//
-
 import UIKit
 
 class OpportunitiesTableViewController: UITableViewController {
-
+    var opportunities : [Opportunity] = []
     override func viewDidLoad() {
         super.viewDidLoad()
+        opportunities = createOpportunities()
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -25,32 +19,50 @@ class OpportunitiesTableViewController: UITableViewController {
         let scholarship2 = Opportunity()
         scholarship2.name = "Tallo"
         scholarship2.type = "Scholarship"
+        let camp1 = Opportunity()
+        camp1.name = "Kode with Klossy"
+        camp1.type = "Camp"
         
-        return [scholarship1, scholarship2]
+        return [scholarship1, scholarship2, camp1]
     }
 
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return opportunities.count
     }
 
-    /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
 
         // Configure the cell...
+        let opportunity = opportunities[indexPath.row]
+        
+        if opportunity.type == "Scholarship" && opportunity.important{
+            cell.textLabel?.text = "‼️💲" + opportunity.name
+        }else if opportunity.type == "Camp" && opportunity.important{
+            cell.textLabel?.text = "‼️✏️" + opportunity.name
+        }else if opportunity.type == "Internship" && opportunity.important{
+            cell.textLabel?.text = "‼️💻" + opportunity.name
+        }else if opportunity.important{
+            cell.textLabel?.text = "‼️" + opportunity.name
+        }else{
+            cell.textLabel?.text = opportunity.name
+        }
 
         return cell
     }
-    */
-
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let opportunity = opportunities[indexPath.row]
+        
+        performSegue(withIdentifier: "moveToTrash", sender: opportunity)
+    }
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
@@ -67,7 +79,7 @@ class OpportunitiesTableViewController: UITableViewController {
             tableView.deleteRows(at: [indexPath], with: .fade)
         } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
+        }
     }
     */
 
@@ -86,14 +98,22 @@ class OpportunitiesTableViewController: UITableViewController {
     }
     */
 
-    /*
+
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
+        if let addVC = segue.destination as? AddToOpportunitiesViewController{
+            addVC.previousVC = self
+        }
+        if let completeVC = segue.destination as? DeleteOppViewController{
+            if let opportunity = sender as? Opportunity{
+                completeVC.selectedOpportunity = opportunity
+                completeVC.previousVC = self
+            }
+        }
     }
-    */
 
 }
