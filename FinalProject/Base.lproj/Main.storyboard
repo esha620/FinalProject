@@ -141,7 +141,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="5fg-vI-FK9">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="reuseIdentifier" id="5fg-vI-FK9">
                                 <rect key="frame" x="0.0" y="24.5" width="414" height="43.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="5fg-vI-FK9" id="ObM-oG-vpD">
@@ -163,7 +163,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <segue destination="nWs-0g-V21" kind="show" id="iaO-fl-Yyz"/>
+                        <segue destination="nWs-0g-V21" kind="show" identifier="moveToTrash" id="iaO-fl-Yyz"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="86d-Zf-pHk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
